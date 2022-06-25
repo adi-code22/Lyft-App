@@ -65,24 +65,39 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
+
+    Position pos = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    GetAddressFromLatLong(pos, "Current Location", 1);
     return await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
   }
 
-  Future<void> GetAddressFromLatLong(Position position, String str) async {
+  Future<void> GetAddressFromLatLong(Position position, String str,
+      [int? i]) async {
     List<Placemark> placemarks =
         await placemarkFromCoordinates(position.latitude, position.longitude);
     print(placemarks);
     setState(() {
-      place = placemarks[0];
-      _initial = Marker(
-        markerId: MarkerId(position.toString()),
-        position: LatLng(position.latitude, position.longitude),
-        infoWindow: InfoWindow(
-          title: str,
-        ),
-        icon: BitmapDescriptor.defaultMarker,
-      );
+      i == 1 ? place = placemarks[0] : null;
+      i == 1
+          ? _initial = Marker(
+              markerId: MarkerId(position.toString()),
+              position: LatLng(position.latitude, position.longitude),
+              infoWindow: InfoWindow(
+                title: str,
+              ),
+              icon: BitmapDescriptor.defaultMarker,
+            )
+          : _origin = Marker(
+              markerId: MarkerId(position.toString()),
+              position: LatLng(position.latitude, position.longitude),
+              infoWindow: InfoWindow(
+                title: str,
+              ),
+              icon: BitmapDescriptor.defaultMarkerWithHue(
+                  BitmapDescriptor.hueGreen),
+            );
     });
   }
 
@@ -137,19 +152,16 @@ class _MyHomePageState extends State<MyHomePage> {
       // print("lati= " + lat.toString() + "long=" + lon.toString());
       // showLocation = await LatLng(lat, lon);
     });
-    await GetAddressFromLatLong(pos, "Initial");
+    await GetAddressFromLatLong(pos, "Initial", 1);
   }
 
   @override
   void initState() {
     initialiseLocation();
     _getGeoLocationPosition();
-
-    super.initState();
-
     getDirections();
 
-    print(place.subAdministrativeArea.toString());
+    super.initState();
   }
 
   void _addMarker(LatLng pos) async {
@@ -312,7 +324,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         onTap: () async {
                           Position pos = await _getGeoLocationPosition();
 
-                          await GetAddressFromLatLong(pos, "Initial");
+                          await GetAddressFromLatLong(pos, "Initial", 1);
                         },
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
@@ -368,7 +380,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               heading: 544,
                               speed: 34,
                               speedAccuracy: 12);
-                          await GetAddressFromLatLong(pos, "Panoor");
+                          await GetAddressFromLatLong(pos, "Panoor", 0);
                           getDirections();
                         },
                         child: Text("Panoor"),
@@ -377,19 +389,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       ElevatedButton(
                         onPressed: () async {
-                          setState(() async {
-                            Position pos = Position(
-                                longitude: 74.145874,
-                                latitude: 16.640120,
-                                timestamp: DateTime.now(),
-                                accuracy: 89,
-                                altitude: 45,
-                                heading: 544,
-                                speed: 34,
-                                speedAccuracy: 12);
-                            await GetAddressFromLatLong(pos, "Mahe");
-                            getDirections();
-                          });
+                          Position pos = Position(
+                              longitude: 75.5388,
+                              latitude: 11.7030,
+                              timestamp: DateTime.now(),
+                              accuracy: 89,
+                              altitude: 45,
+                              heading: 544,
+                              speed: 34,
+                              speedAccuracy: 12);
+                          await GetAddressFromLatLong(pos, "Mahe", 0);
+
+                          _addMarker(LatLng(pos.latitude, pos.longitude));
                         },
                         child: Text("Mahe"),
                         style: ElevatedButton.styleFrom(
@@ -406,7 +417,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               heading: 544,
                               speed: 34,
                               speedAccuracy: 12);
-                          await GetAddressFromLatLong(pos, "Kuthuparambu");
+                          await GetAddressFromLatLong(pos, "Kuthuparambu", 0);
                           getDirections();
                         },
                         child: Text("Kuthuparambu"),
@@ -466,6 +477,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       alignment: Alignment.center,
                       children: [
                         GoogleMap(
+                          zoomGesturesEnabled: true,
+                          tiltGesturesEnabled: false,
                           myLocationButtonEnabled: false,
                           zoomControlsEnabled: false,
                           initialCameraPosition: _initialCameraPosition,
@@ -474,7 +487,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           markers: {
                             if (_origin != null) _origin!,
                             if (_destination != null) _destination!,
-                            _initial!
+                            if (_initial != null) _initial!
                           },
                           polylines: {
                             if (_info != null)

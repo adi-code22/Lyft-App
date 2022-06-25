@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lyft/main.dart';
 
 class Confirmation extends StatefulWidget {
   const Confirmation({Key? key, required this.price}) : super(key: key);
@@ -11,6 +13,19 @@ class Confirmation extends StatefulWidget {
 }
 
 class _ConfirmationState extends State<Confirmation> {
+  void showNotification(String title, String body) {
+    flutterLocalNotificationsPlugin.show(
+        0,
+        title,
+        body,
+        NotificationDetails(
+            android: AndroidNotificationDetails(channel.id, channel.name,
+                importance: Importance.high,
+                color: Colors.blue,
+                playSound: true,
+                icon: '@mipmap/ic_launcher')));
+  }
+
   bool temp = false;
   @override
   void initState() {
@@ -22,6 +37,8 @@ class _ConfirmationState extends State<Confirmation> {
         // Here you can write your code for open new view
         temp = true;
       });
+      showNotification(
+          "Lyft Booking Confirmed!", "Wait for the driver to contact you!");
     });
   }
 
@@ -88,54 +105,59 @@ class _ConfirmationState extends State<Confirmation> {
                           ),
                         ),
                       ),
-                      ListTile(
-                        isThreeLine: true,
-                        title: Row(
-                          children: [
-                            Text(
-                              "Ajil Ibrahim ",
-                              style: TextStyle(fontSize: 20),
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                                color: Theme.of(context).primaryColorDark)),
+                        child: ListTile(
+                          isThreeLine: true,
+                          title: Row(
+                            children: [
+                              Text(
+                                "Ajil Ibrahim ",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ],
+                          ),
+                          subtitle: Text(
+                              "⭐ 5.0 - Autorikshaw ACE\nPrice = Rs. ${double.parse(widget.price.toString()).toStringAsFixed(2)}"),
+                          trailing: CircleAvatar(
+                            radius: 20,
+                            backgroundColor:
+                                Theme.of(context).primaryColorLight,
+                            child: Icon(
+                              Icons.account_circle,
+                              color: Colors.white,
+                              size: 40,
                             ),
-                            Container(
-                              height: 20,
-                              width: 100,
-                              child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Theme.of(context).primaryColor),
-                                  onPressed: () {
-                                    // Navigator.push(
-                                    //     context,
-                                    //     MaterialPageRoute(
-                                    //       builder: (context) =>
-                                    //           Confirmation(),
-                                    //     ));
-                                  },
-                                  child: Text(
-                                    "CONFIRM",
-                                    style: TextStyle(
-                                        color: Theme.of(context)
-                                            .primaryColorLight),
-                                  )),
-                            )
-                          ],
-                        ),
-                        subtitle: Text(
-                            "⭐ 5.0 - Autorikshaw ACE\nPrice = Rs. ${double.parse(widget.price.toString()).toStringAsFixed(2)}"),
-                        trailing: CircleAvatar(
-                          radius: 20,
-                          backgroundColor: Theme.of(context).primaryColorLight,
-                          child: Icon(
-                            Icons.account_circle,
-                            color: Colors.white,
-                            size: 40,
                           ),
                         ),
                       ),
                       ListTile(
-                        title: Text("Name"),
+                        title: Text("Driver name"),
                         trailing: Text(
                           "Ajil Ibrahim",
-                          style: TextStyle(color: Colors.green, fontSize: 25),
+                          style: TextStyle(
+                              color: Theme.of(context).primaryColorLight,
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text("Car type"),
+                        trailing: Text(
+                          "Autorikshaw ACE",
+                          style: TextStyle(color: Colors.green, fontSize: 15),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text("Driver rating"),
+                        trailing: Text(
+                          "5.0 ⭐",
+                          style: TextStyle(color: Colors.green, fontSize: 15),
                         ),
                       ),
                       ListTile(

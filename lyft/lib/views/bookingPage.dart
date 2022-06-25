@@ -113,7 +113,7 @@ class _BookingState extends State<Booking> {
                                         primary:
                                             Theme.of(context).primaryColor),
                                     onPressed: () {
-                                      Navigator.push(
+                                      Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
@@ -130,7 +130,9 @@ class _BookingState extends State<Booking> {
                             ],
                           ),
                           subtitle: Text(
-                              "⭐ 5.0 - Autorikshaw ACE\nPrice = Rs. ${double.parse((dist * 30).toString()).toStringAsFixed(2)}"),
+                            "⭐ 5.0 - Autorikshaw ACE\nPrice = Rs. ${double.parse((dist * 30).toString()).toStringAsFixed(2)}",
+                            style: TextStyle(fontSize: 15),
+                          ),
                           trailing: CircleAvatar(
                             radius: 20,
                             backgroundColor:
