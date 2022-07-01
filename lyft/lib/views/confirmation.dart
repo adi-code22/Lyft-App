@@ -5,9 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lyft/main.dart';
 
 class Confirmation extends StatefulWidget {
-  const Confirmation({Key? key, required this.price}) : super(key: key);
+  const Confirmation({Key? key, required this.price, required this.name})
+      : super(key: key);
 
   final double price;
+  final String name;
   @override
   State<Confirmation> createState() => _ConfirmationState();
 }
@@ -115,7 +117,7 @@ class _ConfirmationState extends State<Confirmation> {
                           title: Row(
                             children: [
                               Text(
-                                "Ajil Ibrahim ",
+                                "${widget.name}",
                                 style: TextStyle(
                                   fontSize: 20,
                                 ),
@@ -139,7 +141,7 @@ class _ConfirmationState extends State<Confirmation> {
                       ListTile(
                         title: Text("Driver name"),
                         trailing: Text(
-                          "Ajil Ibrahim",
+                          "${widget.name}",
                           style: TextStyle(
                               color: Theme.of(context).primaryColorLight,
                               fontSize: 22,

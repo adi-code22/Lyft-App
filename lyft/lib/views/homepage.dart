@@ -73,8 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
         desiredAccuracy: LocationAccuracy.high);
   }
 
+  LatLng? _originPos;
+  LatLng? _initialPos;
   Future<void> GetAddressFromLatLong(Position position, String str,
       [int? i]) async {
+    _originPos = LatLng(position.latitude, position.longitude);
+    _initialPos = LatLng(position.latitude, position.longitude);
     List<Placemark> placemarks =
         await placemarkFromCoordinates(position.latitude, position.longitude);
     print(placemarks);
@@ -83,15 +87,18 @@ class _MyHomePageState extends State<MyHomePage> {
       i == 1
           ? _initial = Marker(
               markerId: MarkerId(position.toString()),
-              position: LatLng(position.latitude, position.longitude),
+              position: _initialPos!,
               infoWindow: InfoWindow(
                 title: str,
               ),
               icon: BitmapDescriptor.defaultMarker,
             )
           : _origin = Marker(
+              onDrag: (value) {
+                setState(() {});
+              },
               markerId: MarkerId(position.toString()),
-              position: LatLng(position.latitude, position.longitude),
+              position: _originPos!,
               infoWindow: InfoWindow(
                 title: str,
               ),
@@ -556,8 +563,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => Booking(
-                                              distance: distance,
-                                            )));
+                                            distance: distance,
+                                            pickUp: _initial!.position,
+                                            drop: _origin!.position)));
                               },
                               child: Container(
                                 padding: const EdgeInsets.symmetric(
