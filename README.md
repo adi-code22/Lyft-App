@@ -20,14 +20,14 @@
 <h3 align="center">LYFT App</h3>
 
   <p align="center">
-    your Smart trawell buddy, Powered by AI.
+    bring your LYF and Travel together, Powered by Blockchain.
     <br />
     <br />
-    <a href="https://www.youtube.com/watch?v=dg3E_iASbt8">View Demo</a>
+<!--     <a href="https://www.youtube.com/watch?v=dg3E_iASbt8">View Demo</a> -->
     ·
-    <a href="https://github.com/adi-code22/TraWell-App/issues">Report Bug</a>
+    <a href="https://github.com/adi-code22/Lyft-App/issues">Report Bug</a>
     ·
-    <a href="https://github.com/adi-code22/TraWell-App/issues">Request Feature</a>
+    <a href="https://github.com/adi-code22/Lyft-App/issues">Request Feature</a>
   </p>
 </div>
 
@@ -42,20 +42,20 @@
 
 <!-- Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description` -->
 
-#### TraWell comes with a cross platform mobile application and a website
+#### Lyft comes with a cross platform mobile application and a website
 
 [![Proposed Solutions][solution]](https://example.com)
 
 ## Features.
 
 [![ScanMonument][scan]](https://example.com)
-#### Scan monument is basically an ML powered Image Classifier which detects monuments and reads out its historical and heirarchial importance with the help of a text to speach engine.
+#### LyfT offers you a decentralised seamless auto taxi booking experience with bidding system, so that you travel at fare rates.
 
 [![SpeakNative][speak]](https://example.com)
-#### Speak native is a voice to voice language translator powered by google translate.
+#### A Completely decentralised P2P system with advanced blockchain technology.
 
 [![Card and Market][card]](https://example.com)
-[![Card and Market][locate]](https://example.com)
+<!-- [![Card and Market][locate]](https://example.com) -->
 
 
 
@@ -70,7 +70,7 @@
 
 * [![Flutter][Flutter]][Flutter-url]
 * [![ReactJS][React.js]][React-url]
-* [![Tensorflow][Tensorflow]][Tensorflow-url]
+* [![Blockchain][Blockchain]][Blockchain-url]
 * [![NodeJS][NodeJS]][NodeJS-url]
 * [![ExpressJS][ExpressJS]][ExpressJS-url]
 
@@ -94,7 +94,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/adi-code22/TraWell-App.git
+   git clone https://github.com/adi-code22/Lyft-App.git
    ```
 2. Direct to root folder and run flutter project
    ```sh
@@ -140,12 +140,7 @@ Your Name - Adityakrishnan [adityakrishnanp007@gmail.com]
 
 Twitter [@AdityakrishnanP](https://twitter.com/AdityakrishnanP)
 
-Project Link: [https://github.com/adi-code22/TraWell-App](https://github.com/adi-code22/TraWell-App)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
+Project Link: [https://github.com/adi-code22/Lyft-App](https://github.com/adi-code22/Lyft-App)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -153,16 +148,16 @@ Project Link: [https://github.com/adi-code22/TraWell-App](https://github.com/adi
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/adi-code22/TraWell-App.svg?style=for-the-badge
-[contributors-url]: https://github.com/adi-code22/TraWell-App/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/adi-code22/TraWell-App.svg?style=for-the-badge
-[forks-url]: https://github.com/adi-code22/TraWell-App/network/members
-[stars-shield]: https://img.shields.io/github/stars/adi-code22/TraWell-App.svg?style=for-the-badge
-[stars-url]: https://github.com/adi-code22/TraWell-App/stargazers
-[issues-shield]: https://img.shields.io/github/issues/adi-code22/TraWell-App.svg?style=for-the-badge
-[issues-url]: https://github.com/adi-code22/TraWell-App/issues
-[license-shield]: https://img.shields.io/github/license/adi-code22/TraWell-App.svg?style=for-the-badge
-[license-url]: https://github.com/adi-code22/TraWell-App/blob/main/LICENSE.md
+[contributors-shield]: https://img.shields.io/github/contributors/adi-code22/Lyft-App.svg?style=for-the-badge
+[contributors-url]: https://github.com/adi-code22/Lyft-App/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/adi-code22/Lyft-App.svg?style=for-the-badge
+[forks-url]: https://github.com/adi-code22/Lyft-App/network/members
+[stars-shield]: https://img.shields.io/github/stars/adi-code22/Lyft-App.svg?style=for-the-badge
+[stars-url]: https://github.com/adi-code22/Lyft-App/stargazers
+[issues-shield]: https://img.shields.io/github/issues/adi-code22/Lyft-App.svg?style=for-the-badge
+[issues-url]: https://github.com/adi-code22/Lyft-App/issues
+[license-shield]: https://img.shields.io/github/license/adi-code22/Lyft-App.svg?style=for-the-badge
+[license-url]: https://github.com/adi-code22/Lyft-App/blob/main/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/adityakrishnan007/
 [product-screenshot]: assets/git_images/first.PNG
@@ -175,8 +170,8 @@ Project Link: [https://github.com/adi-code22/TraWell-App](https://github.com/adi
 [Flutter-url]: https://flutter.dev/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-[Tensorflow]: https://img.shields.io/badge/Tensorflow-35495E?style=for-the-badge&logo=tensorflow&logoColor=orange
-[Tensorflow-url]: https://www.tensorflow.org/
+[Blockchain]: https://img.shields.io/badge/Blockchain-35495E?style=for-the-badge&logo=ethereum&logoColor=white
+[Blockchain-url]: https://www.tensorflow.org/
 [NodeJS]: https://img.shields.io/badge/NodeJS-563D7C?style=for-the-badge&logo=nodedotjs&logoColor=green
 [NodeJS-url]: https://nodejs.org/en/
 [ExpressJS]: https://img.shields.io/badge/ExpressJS-4A4A55?style=for-the-badge&logo=express&logoColor=FF3E00
