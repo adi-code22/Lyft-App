@@ -17,13 +17,14 @@
     <img src="assets/git_images/logo.PNG" alt="Logo" width="800" height="287">
   </a>
 
-  <h6 align="center">Second Runner-Up, HACKATLY'22, College of Engineering, Thalassery</h6>
+  
 <h3 align="center">LYFT App</h3>
 
 
   
   <p align="center">
     bring your LYF and Travel together, Powered by Blockchain.
+    <h6 align="center">Second Runner-Up, HACKATLY'22, College of Engineering, Thalassery</h6>
     <br />
     <br />
 <!--     <a href="https://www.youtube.com/watch?v=dg3E_iASbt8">View Demo</a> -->
