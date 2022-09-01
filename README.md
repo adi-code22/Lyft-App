@@ -17,8 +17,9 @@
     <img src="assets/git_images/logo.PNG" alt="Logo" width="800" height="287">
   </a>
 
+  <h6 align="center">Second Runner-Up, HACKATLY'22, College of Engineering, Thalassery</h6>
 <h3 align="center">LYFT App</h3>
-<h5 align="center">Second Runner-Up, HACKATLY'22, College of Engineering, Thalassery</h5>
+
 
   
   <p align="center">
